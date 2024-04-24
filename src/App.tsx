@@ -1,6 +1,8 @@
 import './App.css';
 
+import { Button } from 'antd';
 import { useState } from 'react';
+import styled from 'styled-components';
 
 import viteLogo from '/vite.svg';
 
@@ -20,15 +22,26 @@ function App() {
         </a>
       </div>
       <h1>Vite + React </h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
+      <StyledLink isblue={count > 4} className="card">
+        <Button type="primary" onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </Button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
-      </div>
+      </StyledLink>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </>
   );
 }
+
+interface PStyledLink {
+  isblue?: boolean;
+}
+
+const StyledLink = styled.div<PStyledLink>`
+  color: ${(props) => (props.isblue ? 'blue' : 'pink')};
+  font-weight: bold;
+`;
 
 export default App;
