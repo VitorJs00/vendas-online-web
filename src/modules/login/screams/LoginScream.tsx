@@ -1,10 +1,21 @@
-import { BackgroundImage } from '../styles/loginScream.styled';
+import {
+  BackgroundImage,
+  ContainerLogin,
+  ContainerLoginScream,
+  LimetedContainer,
+  LogoImage,
+} from '../styles/loginScream.styled';
 
 const LoginScream = () => {
   return (
-    <div>
+    <ContainerLoginScream>
+      <ContainerLogin>
+        <LimetedContainer>
+          <LogoImage src="./logo.png" />
+        </LimetedContainer>
+      </ContainerLogin>
       <BackgroundImage src="./background.png" />
-    </div>
+    </ContainerLoginScream>
   );
 };
 export default LoginScream;
